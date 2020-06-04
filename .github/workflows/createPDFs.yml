@@ -25,4 +25,4 @@ jobs:
         #output_dir: pd
       - uses: docker://pandoc/core:2.9
         with:
-          args: "../../doc/shortcuts.md --pdf-engine=xelatex -o ../../doc/shortcuts.pdf"
+          args: "doc/shortcuts.md --pdf-engine=xelatex -o doc/shortcuts.pdf"
