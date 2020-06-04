@@ -18,8 +18,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Create PDF
-      uses: mkrakowitzer/actions-makepdfs@1.1
-      with:
-        markdown_dir: docs
-        output_dir: pdf
+    #- name: Create PDF
+      #uses: mkrakowitzer/actions-makepdfs@1.1
+      #with:
+        #markdown_dir: docs
+        #output_dir: pd
+      - uses: docker://pandoc/core:2.9
+        with:
+          args: "doc/shortcuts.md --pdf-engine=xelatex -o shortcuts.pdf"
